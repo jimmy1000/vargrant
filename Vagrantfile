@@ -32,7 +32,6 @@ Vagrant.configure("2") do |config|
     end
   end
 
-
   config.vm.define "loadbalance" do |subconfig|
     subconfig.vm.box = BOX_IMAGE
     subconfig.vm.hostname = "centos7x6-loadbalance"     # linux ssh 登入顯示的 vagrant@lb1
@@ -55,7 +54,7 @@ Vagrant.configure("2") do |config|
       vb.memory = "256"
     end
   end
-
+#ruby 的循环
   (1..NODE_COUNT).each do |i|
     config.vm.define "node#{i}" do |subconfig|
       subconfig.vm.box = BOX_IMAGE
